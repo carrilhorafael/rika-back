@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subjects
   post 'auth/signup'
   post 'auth/login'
   resources :users
