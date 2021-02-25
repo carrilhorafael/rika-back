@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  gitlab_link: MyString
+  homework: one
+  delay_days: 1
+
+two:
+  user: two
+  gitlab_link: MyString
+  homework: two
+  delay_days: 1

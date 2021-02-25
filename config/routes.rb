@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :assignments
   resources :lessons
   resources :subjects
   post 'auth/signup'
