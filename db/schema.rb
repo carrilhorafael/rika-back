@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_213821) do
+ActiveRecord::Schema.define(version: 2021_02_25_214746) do
 
   create_table "coursewares", force: :cascade do |t|
     t.string "content"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2021_02_25_213821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_coursewares_on_lesson_id"
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.string "description"
+    t.integer "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_homeworks_on_lesson_id"
   end
 
   create_table "lessons", force: :cascade do |t|
