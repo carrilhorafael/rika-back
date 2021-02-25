@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     ## relações
-        
+        has_many :assignments
 
     ## validações
         validates :name, :password_confirmation, :email, presence: true

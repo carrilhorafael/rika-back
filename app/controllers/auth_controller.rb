@@ -10,9 +10,10 @@ class AuthController < ApplicationController
   end
 
   def login
+    byebug
     user = User.find_by!(email: params[:user][:email])
     if user.authenticate(params[:user][:password])
-      render json: user 
+      render json: user
       response.headers["Authorization"] = JsonWebToken.encode(user_id: user.id)
     else
       render json: {message: "Senha inválida"}, status: 403
