@@ -58,6 +58,6 @@ class AssignmentsController < ApplicationController
       params.require(:assignment).permit(:user_id, :gitlab_link, :homework_id, :delay_days)
     end
     def feedback_params
-      params.require(:feedback).permit(:content, :grade)
+      params.require(:feedback).permit(:user_id, :content, :grade)
     end
 end

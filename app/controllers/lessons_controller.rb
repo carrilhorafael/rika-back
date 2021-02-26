@@ -34,7 +34,15 @@ class LessonsController < ApplicationController
       render json: @lesson.errors, status: :unprocessable_entity
     end
   end
+  def give_feedback
+    @lesson_feedback = LessonFeedback.new(feedback_params.merge(lesson_id: @lesson.id))
 
+    if @lesson_feedback.save
+      render json: @lesson, status: :created
+    else
+      render json: @lesson_feedback.errors, status: :unprocessable_entity
+    end
+  end
   # PATCH/PUT /lessons/1
   def update
     if @lesson.update(lesson_params)
@@ -58,5 +66,8 @@ class LessonsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def lesson_params
       params.require(:lesson).permit(:description, :link_youtube, :schedule, :subject_id, homework:{})
+    end
+    def feedback_params
+      params.require(:feedback).permit(:user_id, :lesson_id, :content)
     end
 end

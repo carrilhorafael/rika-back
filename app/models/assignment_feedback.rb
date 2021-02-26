@@ -1,6 +1,7 @@
 class AssignmentFeedback < ApplicationRecord
   ## relações
-  belongs_to :assignment
+    belongs_to :user
+    belongs_to :assignment
 
   ## validações
     validates :content, :grade, presence: true
