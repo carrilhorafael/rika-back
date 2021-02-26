@@ -10,7 +10,6 @@ class AuthController < ApplicationController
   end
 
   def login
-    byebug
     user = User.find_by!(email: params[:user][:email])
     if user.authenticate(params[:user][:password])
       render json: user

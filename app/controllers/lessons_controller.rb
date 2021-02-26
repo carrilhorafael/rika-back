@@ -15,10 +15,21 @@ class LessonsController < ApplicationController
 
   # POST /lessons
   def create
-    @lesson = Lesson.new(lesson_params)
+    @lesson = Lesson.new(lesson_params.except(:homework))
 
     if @lesson.save
-      render json: @lesson, status: :created, location: @lesson
+      destroy_lesson = false
+      if lesson_params[:homework].present?
+        homework = Homework.new(lesson_id: @lesson.id, description: lesson_params[:homework][:description], deadline: lesson_params[:homework][:deadline])
+        destroy_lesson = true unless homework.save
+      end
+
+      if destroy_lesson
+        @lesson.destroy
+        render json: homework.errors, status: 422
+      else
+        render json: @lesson, status: :created, location: @lesson 
+      end
     else
       render json: @lesson.errors, status: :unprocessable_entity
     end
@@ -46,6 +57,6 @@ class LessonsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def lesson_params
-      params.require(:lesson).permit(:name, :description, :link_youtube, :schedule, :subject_id)
+      params.require(:lesson).permit(:description, :link_youtube, :schedule, :subject_id, homework:{})
     end
 end

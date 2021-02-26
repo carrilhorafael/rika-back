@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_215446) do
+ActiveRecord::Schema.define(version: 2021_02_26_132505) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer "user_id"
@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2021_02_25_215446) do
   create_table "lessons", force: :cascade do |t|
     t.string "description"
     t.string "link_youtube"
-    t.string "schedule"
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "schedule"
     t.index ["subject_id"], name: "index_lessons_on_subject_id"
   end
 
