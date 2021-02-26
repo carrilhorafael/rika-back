@@ -68,6 +68,6 @@ class LessonsController < ApplicationController
       params.require(:lesson).permit(:description, :link_youtube, :schedule, :subject_id, homework:{})
     end
     def feedback_params
-      params.require(:feedback).permit(:user_id, :lesson_id, :content)
+      params.require(:feedback).permit(:user_id, :lesson_id, :lesson_grade, :lesson_feedback, :instructor_feedback, :instructor_grade, :monitors_feedback, :monitors_grade)
     end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :lesson_feedbacks
+  post '/lessons/:id/feedbacks', to: 'lessons#give_feedback'
   post '/assignments/:id/feedbacks', to: 'assignments#give_feedback'
   resources :assignments
   resources :lessons
