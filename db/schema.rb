@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_213821) do
+ActiveRecord::Schema.define(version: 2021_02_26_153707) do
+
+  create_table "assignment_feedbacks", force: :cascade do |t|
+    t.string "content"
+    t.integer "grade"
+    t.integer "assignment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignment_id"], name: "index_assignment_feedbacks_on_assignment_id"
+  end
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "gitlab_link"
+    t.integer "homework_id"
+    t.integer "delay_days"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["homework_id"], name: "index_assignments_on_homework_id"
+    t.index ["user_id"], name: "index_assignments_on_user_id"
+  end
 
   create_table "coursewares", force: :cascade do |t|
     t.string "content"
@@ -20,13 +40,22 @@ ActiveRecord::Schema.define(version: 2021_02_25_213821) do
     t.index ["lesson_id"], name: "index_coursewares_on_lesson_id"
   end
 
+  create_table "homeworks", force: :cascade do |t|
+    t.string "description"
+    t.integer "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deadline"
+    t.index ["lesson_id"], name: "index_homeworks_on_lesson_id"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.string "description"
     t.string "link_youtube"
-    t.string "schedule"
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "schedule"
     t.index ["subject_id"], name: "index_lessons_on_subject_id"
   end
 
