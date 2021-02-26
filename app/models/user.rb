@@ -2,6 +2,9 @@ class User < ApplicationRecord
     has_secure_password
     ## relações
         has_many :assignments
+        has_many :lesson_feedbacks
+        has_many :assignment_feedbacks
+        
 
     ## validações
         validates :name, :password_confirmation, :email, presence: true
