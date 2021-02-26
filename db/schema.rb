@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_181303) do
+ActiveRecord::Schema.define(version: 2021_02_26_183046) do
 
   create_table "assignment_feedbacks", force: :cascade do |t|
     t.string "content"
@@ -54,9 +54,14 @@ ActiveRecord::Schema.define(version: 2021_02_26_181303) do
   create_table "lesson_feedbacks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "lesson_id"
-    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lesson_grade"
+    t.string "lesson_feedback"
+    t.string "instructor_feedback"
+    t.integer "instructor_grade"
+    t.string "monitors_feedback"
+    t.integer "monitors_grade"
     t.index ["lesson_id"], name: "index_lesson_feedbacks_on_lesson_id"
     t.index ["user_id"], name: "index_lesson_feedbacks_on_user_id"
   end
