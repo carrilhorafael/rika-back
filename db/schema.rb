@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_132505) do
+ActiveRecord::Schema.define(version: 2021_02_26_153707) do
+
+  create_table "assignment_feedbacks", force: :cascade do |t|
+    t.string "content"
+    t.integer "grade"
+    t.integer "assignment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignment_id"], name: "index_assignment_feedbacks_on_assignment_id"
+  end
 
   create_table "assignments", force: :cascade do |t|
     t.integer "user_id"
