@@ -4,6 +4,7 @@ class User < ApplicationRecord
         has_many :assignments
         has_many :lesson_feedbacks
         has_many :assignment_feedbacks
+        has_many :lessons
         
 
     ## validações
