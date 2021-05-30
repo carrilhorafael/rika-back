@@ -13,3 +13,8 @@ instrutor = User.create(name: "Gyselle Melo", email: "gyselle.melo@injunior.com.
 25.times.each do 
     News.create(title: "Nova notícia", user_id: 1, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius libero at diam egestas, eget interdum nisi dignissim. Curabitur eu porta ante. Sed fringilla erat dui, at lacinia orci suscipit quis. Nulla accumsan nec mauris nec pretium. Phasellus molestie convallis cursus. Morbi nisl enim, suscipit hendrerit bibendum nec, fermentum id sem. Donec varius fringilla turpis. Nam eleifend dictum erat, in egestas dui tincidunt a. Duis vitae aliquet eros.")
 end
+
+subjects = ["Rails", "React", "HTML", "CSS", "Javascript", "Ruby", "Criação"]
+subjects.each do |sub|
+    Subject.create(name: sub)
+end
