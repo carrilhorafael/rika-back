@@ -6,7 +6,7 @@ class Lesson < ApplicationRecord
     has_many :lesson_feedbacks
 
   ## validações
-    validates :description, :link_youtube, :schedule, presence: true
+    validates :description, :link_youtube, presence: true
 
   ## funções
 

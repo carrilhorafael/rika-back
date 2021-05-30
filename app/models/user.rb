@@ -10,6 +10,10 @@ class User < ApplicationRecord
         validates :name, :password_confirmation, :email, presence: true
         VALID_EMAIL_FORMAT= /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
         validates :email, uniqueness: {case_sensitive:true}, format: {with: VALID_EMAIL_FORMAT}
-    
+        enum role:{
+            "administrador": 1,
+            "instrutor": 2,
+            "estudante": 3
+        }
     ## funções
 end

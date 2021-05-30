@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_183046) do
+ActiveRecord::Schema.define(version: 2021_05_30_143636) do
 
   create_table "assignment_feedbacks", force: :cascade do |t|
     t.string "content"
@@ -72,8 +72,16 @@ ActiveRecord::Schema.define(version: 2021_02_26_183046) do
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "schedule"
     t.index ["subject_id"], name: "index_lessons_on_subject_id"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "content"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_news_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -88,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_183046) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
   end
 
 end
