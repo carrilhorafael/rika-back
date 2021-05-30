@@ -13,6 +13,11 @@ class SubjectsController < ApplicationController
     render json: @subject
   end
 
+  def preview
+    @subjects = Subject.select(:id, :name)
+    render json: @subjects
+  end
+
   # POST /subjects
   def create
     @subject = Subject.new(subject_params)

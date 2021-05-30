@@ -24,6 +24,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def filter
+    @users = User.where(role: params[:filter]).select(:id, :name)
+    render json: @users
+  end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
