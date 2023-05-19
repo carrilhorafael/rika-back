@@ -4,7 +4,7 @@
 https://docs.google.com/document/d/1JWim2Hb2IsfZghFIzB1CzvGPEB-RNnmc3Yl6TG-nFKE/edit?usp=sharing
 
 
-![Diagramas de sequência do sistema]("./diagramas de sequencia de sistema.jpg")
+![Diagramas de sequência do sistema](/diagramas_sequencia_sistema.jpg)
 
 
 #### Equipe de Desenvolvimento
