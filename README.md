@@ -7,13 +7,16 @@ https://docs.google.com/document/d/1JWim2Hb2IsfZghFIzB1CzvGPEB-RNnmc3Yl6TG-nFKE/
 https://docs.google.com/document/d/1JWim2Hb2IsfZghFIzB1CzvGPEB-RNnmc3Yl6TG-nFKE/edit?usp=sharing
 
 
-
+#### Diagramas de sequência do sistema:
 ![Diagramas de sequência do sistema](/diagramas_sequencia_sistema.jpg)
 
+#### Diagrama de classes detalhado:
 ![Diagrama de classes detalhado](/diagramaClassesDetalhado+diagramasGoF.jpg)
 
-![Diagrama GoF](/diagramaClassesDetalhado+diagramasGoF.jpg)
+#### Diagramas GoF:
+![Diagramas GoF](/diagramaClassesDetalhado+diagramasGoF.jpg)
 
+#### Diagramas de sequência detalhados:
 ![Diagramas de sequência detalhados](/diagramasSequenciaDetalhados.jpg)
 
 
